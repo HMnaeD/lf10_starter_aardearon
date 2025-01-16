@@ -10,16 +10,9 @@ import {Qualification} from "../../model/qualification";
     QualificationListComponent
   ],
   template: `
-    <app-qualification-list [qualifications]="qualifications"> </app-qualification-list>
+    <app-qualification-list></app-qualification-list>
   `,
   styleUrl: './main-view.component.css'
 })
 export class MainViewComponent {
-
-  constructor(private skillDataService: DataService) {
-  }
-
-  get qualifications(): Qualification[] {
-    return this.skillDataService.skills;
-  }
 }
