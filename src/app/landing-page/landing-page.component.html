@@ -1,25 +1,69 @@
 <div class="vh-100">
   <div class="h-25 d-flex justify-content-end p-5">
-    <img class="pfp ms-3 rounded-circle align-self-top mt-4 me-5" src="assets/images/profile.png" alt="Pfp">
+    <div class="dropdown justify-content-center align-content-center">
+      <button class="border-0 bg-white pfp-btn align-self-center mt-4 dropdown-toggle align-self-center" type="button"
+              id="dropdownMenuButton"
+              data-bs-toggle="dropdown" aria-expanded="false">
+        <img class="pfp ms-3 rounded-circle align-self-top" src="assets/images/profile.png" alt="Pfp">
+      </button>
+      <ul class="dropdown-menu w-75 bg-black bg-opacity-25 border-1 border-black "
+          aria-labelledby="dropdownMenuButton">
+        <li class="mt-2 mb-2 d-flex justify-content-center">
+          <button class="btn btn-light w-75 justify-content-start" href="#" data-bs-toggle="tooltip"
+                  data-bs-placement="left" title="Hilfe">
+            <img class="h-75 align-self-start" src="assets/icons/help.png" alt="Help">
+          </button>
+        </li>
+        <li class="mt-2 mb-2 d-flex justify-content-center justify">
+          <button class="btn btn-light w-75" href="#" data-bs-toggle="tooltip" data-bs-placement="left"
+                  title="Firmeneinstellungen">
+            <img class="h-75 align-self-start" src="assets/icons/cog.png" alt="Help">
+          </button>
+        </li>
+        <li class="mt-2 mb-2 d-flex justify-content-center">
+          <button class="btn btn-light w-75" href="#" data-bs-toggle="tooltip" data-bs-placement="left"
+                  title="Nutzereinstellungen">
+            <img class="h-75 align-self-start" src="assets/icons/user.png" alt="Help">
+          </button>
+        </li>
+        <li class="mt-2 mb-2 d-flex justify-content-center">
+          <button class="btn btn-danger w-75" href="#" data-bs-toggle="tooltip" data-bs-placement="left"
+                  title="Abmelden">
+            <img class="h-75 align-self-start" src="assets/icons/logout.png" alt="Help">
+          </button>
+        </li>
+      </ul>
+    </div>
   </div>
   <div class="h-25 d-flex title align-items-center justify-content-center">
     <h1 class="title">DEARONAAR</h1>
   </div>
   <div class="h-25 container justify-content-evenly d-flex">
-    <div class=" card w-25 h-100 align-self-center center justify-content-top p-3">
-      <img class="card-img-top align-self-center h-75 w-75" src="assets/images/Mitarbeiter.webp" alt="Mitarbeiter">
-      <h5 class="card-title">Mitarbeiter</h5>
-      <p class="card-text">Hier kannst du deine Mitarbeiter und deren Fähigkeiten einsehen.</p>
-    </div>
-    <div class="card w-25 h-100 align-self-center center justify-content-top p-3">
-      <img class="card-img-top align-self-center h-75 w-75" src="assets/images/Qualifikationen.webp" alt="Qualifikationen">
-      <h5 class="card-title">Qualifikationen</h5>
-    <p class="card-text">Qualifikationen erstellen und ihnen Mitarbeiter zuweisen</p>
-    </div>
-    <div class="card w-25 h-100 align-self-center center justify-content-top p-3">
-      <img class="card-img-top align-self-center h-75 w-75" src="assets/images/Impressum.webp" alt="Impressum">
-      <h5 class="card-title">Impressum</h5>
-      <p class="card-text">Hier find sich unser Impressum.</p>
-    </div>
+    <a class="w-25 text-decoration-none" href="#">
+      <div class=" card h-100 align-self-center center justify-content-top p-3">
+        <img class="card-img-top align-self-center h-75 w-75" src="assets/images/Mitarbeiter.webp"
+             alt="Mitarbeiter">
+        <h5 class="card-title">Mitarbeiter</h5>
+        <p class="card-text">Hier kannst du deine Mitarbeiter und deren Fähigkeiten einsehen.</p>
+      </div>
+    </a>
+
+    <a class="w-25 text-decoration-none" href="#">
+      <div class="card h-100 align-self-center center justify-content-top p-3">
+        <img class="card-img-top align-self-center h-75 w-75" src="assets/images/Qualifikationen.webp"
+             alt="Qualifikationen">
+        <h5 class="card-title">Qualifikationen</h5>
+        <p class="card-text">Qualifikationen erstellen und ihnen Mitarbeiter zuweisen</p>
+      </div>
+    </a>
+
+    <a class="w-25 text-decoration-none" href="#">
+      <div class="card h-100 align-self-center center justify-content-top p-3">
+        <img class="card-img-top align-self-center h-75 w-75" src="assets/images/Impressum.webp" alt="Impressum">
+        <h5 class="card-title">Impressum</h5>
+        <p class="card-text">Hier find sich unser Impressum.</p>
+      </div>
+    </a>
   </div>
 </div>
+
