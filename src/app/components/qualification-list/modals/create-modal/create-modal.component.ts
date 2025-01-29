@@ -15,12 +15,12 @@ import {QualificationDTO} from "../../../../model/qualificationDTO";
       <div class="modal-dialog">
         <div class="modal-content">
           <div class="modal-header">
-            <h1 class="modal-title fs-5" id="createModalLabel">New message</h1>
+            <h1 class="modal-title fs-5" id="createModalLabel">Qualifikation erstellen</h1>
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
           <div class="modal-body">
             <div class="mb-3">
-              <label for="recipient-name" class="col-form-label">Bezeichnung:</label>
+              <label for="qualification-name" class="col-form-label">Bezeichnung:</label>
               <input type="text" class="form-control" id="qualification-name" [(ngModel)]="skillName" name="skill-name">
             </div>
           </div>
@@ -35,7 +35,7 @@ import {QualificationDTO} from "../../../../model/qualificationDTO";
   styleUrl: './create-modal.component.css'
 })
 export class CreateModalComponent {
-  bearer = 'eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICIzUFQ0dldiNno5MnlQWk1EWnBqT1U0RjFVN0lwNi1ELUlqQWVGczJPbGU0In0.eyJleHAiOjE3Mzc1NDk4NTAsImlhdCI6MTczNzU0NjI1MCwianRpIjoiM2JkN2FlZDAtZWE3NS00YjQ5LThlNWEtMTA1ZGZlM2RjMTZjIiwiaXNzIjoiaHR0cHM6Ly9rZXljbG9hay5zenV0LmRldi9hdXRoL3JlYWxtcy9zenV0IiwiYXVkIjoiYWNjb3VudCIsInN1YiI6IjU1NDZjZDIxLTk4NTQtNDMyZi1hNDY3LTRkZTNlZWRmNTg4OSIsInR5cCI6IkJlYXJlciIsImF6cCI6ImVtcGxveWVlLW1hbmFnZW1lbnQtc2VydmljZSIsInNlc3Npb25fc3RhdGUiOiI2MGZhODhjNC1lMTM5LTRjNjYtYWNkNy0wMDcyYjAzM2FkMzIiLCJhY3IiOiIxIiwiYWxsb3dlZC1vcmlnaW5zIjpbImh0dHA6Ly9sb2NhbGhvc3Q6NDIwMCJdLCJyZWFsbV9hY2Nlc3MiOnsicm9sZXMiOlsicHJvZHVjdF9vd25lciIsIm9mZmxpbmVfYWNjZXNzIiwiZGVmYXVsdC1yb2xlcy1zenV0IiwidW1hX2F1dGhvcml6YXRpb24iLCJ1c2VyIl19LCJyZXNvdXJjZV9hY2Nlc3MiOnsiYWNjb3VudCI6eyJyb2xlcyI6WyJtYW5hZ2UtYWNjb3VudCIsIm1hbmFnZS1hY2NvdW50LWxpbmtzIiwidmlldy1wcm9maWxlIl19fSwic2NvcGUiOiJlbWFpbCBwcm9maWxlIiwiZW1haWxfdmVyaWZpZWQiOnRydWUsInByZWZlcnJlZF91c2VybmFtZSI6InVzZXIifQ.gPgoXzJSa2MWLkN5kabRL1ze8ZmVX7zGGOjzeTzN_13eymCABCQmYFC1G5Hdh2k2fKfhUwpuOTOj9GydplRudfT8lsDQPWmuJJR2FWD5xRNqfUiyLbREs-5mov0fRpM980d3sNYF4v1WGPYyE0a7NRnJk1pODJ0nLEoebEUGVti2JfUt0TGLDvVs1L6Boz76aM47XB1ga5rfUJXa8O1rBGmJHccDqxB2fEfWq9fiev5TtmYO_PFfe94edr1KBNkN3yUiksD_GyxHOX3S6xh2MyNi3kmpxnF61eLO00iuD5hZK-SX8-aPTQNJepc9-a5A3khrfv_kh0f2-ONq6s_8Sw';
+  bearer = 'eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICIzUFQ0dldiNno5MnlQWk1EWnBqT1U0RjFVN0lwNi1ELUlqQWVGczJPbGU0In0.eyJleHAiOjE3MzgxNDYwNTksImlhdCI6MTczODE0MjQ1OSwianRpIjoiZDhkM2MwNGQtNDdiNi00ZTBiLWJhNTgtZTQxNDEzNzljM2ZmIiwiaXNzIjoiaHR0cHM6Ly9rZXljbG9hay5zenV0LmRldi9hdXRoL3JlYWxtcy9zenV0IiwiYXVkIjoiYWNjb3VudCIsInN1YiI6IjU1NDZjZDIxLTk4NTQtNDMyZi1hNDY3LTRkZTNlZWRmNTg4OSIsInR5cCI6IkJlYXJlciIsImF6cCI6ImVtcGxveWVlLW1hbmFnZW1lbnQtc2VydmljZSIsInNlc3Npb25fc3RhdGUiOiIwOTdkMWI2OS1hY2M5LTQxYjAtYjhlYi00ZTQ3YmIwNDFlYzYiLCJhY3IiOiIxIiwiYWxsb3dlZC1vcmlnaW5zIjpbImh0dHA6Ly9sb2NhbGhvc3Q6NDIwMCJdLCJyZWFsbV9hY2Nlc3MiOnsicm9sZXMiOlsicHJvZHVjdF9vd25lciIsIm9mZmxpbmVfYWNjZXNzIiwiZGVmYXVsdC1yb2xlcy1zenV0IiwidW1hX2F1dGhvcml6YXRpb24iLCJ1c2VyIl19LCJyZXNvdXJjZV9hY2Nlc3MiOnsiYWNjb3VudCI6eyJyb2xlcyI6WyJtYW5hZ2UtYWNjb3VudCIsIm1hbmFnZS1hY2NvdW50LWxpbmtzIiwidmlldy1wcm9maWxlIl19fSwic2NvcGUiOiJlbWFpbCBwcm9maWxlIiwiZW1haWxfdmVyaWZpZWQiOnRydWUsInByZWZlcnJlZF91c2VybmFtZSI6InVzZXIifQ.LEwUCCGafgNv-xfa1F9BZawfv9LeJ3nU5Wi5TQMj-k6bv1tzrsqBnhOCNwPa_clup_uy02K7rYb9IQlGtM3iFJtVvU13jUs0daG_lCDVCIkPUBMyUbs9UnJ2xzqseaQVuya1FC8tKKlHYFfgFm3uZ9u3FhJRXDo-MdLiBrA5HW1MtaskdkIW10J4Zoi42OSzwD8so-gwtyQ0LlXlA0jwckjLn8YZMLHApH0c5zBfInoT2D-GexZZS03r_5YgXUC4px-5K2_pnUdowgi5mUDt1wqEer65YHbwRyqsMwBFlayi-LuNVO8MHugUAhU0fLXJC4DCaf2pWKnyChUX5KvtdA';
   skillName: string | undefined;
 
   constructor(private http: HttpClient) {
