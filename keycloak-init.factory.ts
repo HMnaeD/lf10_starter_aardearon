@@ -10,7 +10,7 @@ export function initializeKeycloak(keycloak: KeycloakService) {
         clientId: "employee-management-service-frontend",
       },
       initOptions: {
-        onLoad: 'login-required',
+        onLoad: 'check-sso',
         checkLoginIframe: false,
         silentCheckSsoRedirectUri:
           window.location.origin + '/assets/silent-check-sso.html'
