@@ -1,6 +1,6 @@
 <div class="container mt-3 mb-1 border-bottom mw-100 d-flex justify-content-evenly">
     <div class="headline d-flex w-25 pt-4 justify-content-start align-content-end">
-        <a class="text-decoration-none text-black d-flex justify-content-start align-content-end" href="#">
+        <a class="text-decoration-none text-black d-flex justify-content-start align-content-end" routerLink="/landing-page">
             <img class="" ngSrc="assets/images/MenuIcon.png" alt="Menu Icon" height="35" width="24"/>
             <h3 class="title ps-1"> DEARONAAR</h3>
         </a>
@@ -19,9 +19,9 @@
                    [attr.aria-current]="currentRoute === '/qualifications' ? 'page' : null">Qualifikationen</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" routerLink="/impresum"
-                   [ngClass]="currentRoute === '/impresum' ? 'active bg-black bg-opacity-25' : ''"
-                   [attr.aria-current]="currentRoute === '/impressum' ? 'page' : null">Impressum</a>
+                <a class="nav-link" routerLink="/imprint"
+                   [ngClass]="currentRoute === '/imprint' ? 'active bg-black bg-opacity-25' : ''"
+                   [attr.aria-current]="currentRoute === '/imprint' ? 'page' : null">Impressum</a>
             </li>
         </ul>
     </div>
