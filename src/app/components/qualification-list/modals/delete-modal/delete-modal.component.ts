@@ -1,5 +1,6 @@
 import {Component, Input} from '@angular/core';
 import {HttpClient, HttpHeaders} from "@angular/common/http";
+import {BearerToken} from "../../../../services/bearer.service";
 
 @Component({
   selector: 'app-delete-modal',
@@ -27,17 +28,16 @@ import {HttpClient, HttpHeaders} from "@angular/common/http";
   styleUrl: './delete-modal.component.css'
 })
 export class DeleteModalComponent {
-  bearer = 'eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICIzUFQ0dldiNno5MnlQWk1EWnBqT1U0RjFVN0lwNi1ELUlqQWVGczJPbGU0In0.eyJleHAiOjE3Mzc5NzM3ODgsImlhdCI6MTczNzk3MDE4OCwianRpIjoiNWQ2YzMzNzEtZGYzZS00MzI2LWFlMDItZmZkNGYxMGE1MmUyIiwiaXNzIjoiaHR0cHM6Ly9rZXljbG9hay5zenV0LmRldi9hdXRoL3JlYWxtcy9zenV0IiwiYXVkIjoiYWNjb3VudCIsInN1YiI6IjU1NDZjZDIxLTk4NTQtNDMyZi1hNDY3LTRkZTNlZWRmNTg4OSIsInR5cCI6IkJlYXJlciIsImF6cCI6ImVtcGxveWVlLW1hbmFnZW1lbnQtc2VydmljZSIsInNlc3Npb25fc3RhdGUiOiI5YTRlMTU5MS0xM2MzLTQ5MmItOTEwMy00NjM3Y2UzMzA3ZDIiLCJhY3IiOiIxIiwiYWxsb3dlZC1vcmlnaW5zIjpbImh0dHA6Ly9sb2NhbGhvc3Q6NDIwMCJdLCJyZWFsbV9hY2Nlc3MiOnsicm9sZXMiOlsicHJvZHVjdF9vd25lciIsIm9mZmxpbmVfYWNjZXNzIiwiZGVmYXVsdC1yb2xlcy1zenV0IiwidW1hX2F1dGhvcml6YXRpb24iLCJ1c2VyIl19LCJyZXNvdXJjZV9hY2Nlc3MiOnsiYWNjb3VudCI6eyJyb2xlcyI6WyJtYW5hZ2UtYWNjb3VudCIsIm1hbmFnZS1hY2NvdW50LWxpbmtzIiwidmlldy1wcm9maWxlIl19fSwic2NvcGUiOiJlbWFpbCBwcm9maWxlIiwiZW1haWxfdmVyaWZpZWQiOnRydWUsInByZWZlcnJlZF91c2VybmFtZSI6InVzZXIifQ.KrAxLAbE0524oc0oyMMXhLiV7m4U1FKSZdXhs8jWlW2QepvdPq2Rf7uvps7OpL43QFW3AH55AYGgBQi0i6slgiosmrGp52TNcUwhfSF79nx_7uXHTo8pCWjUdXTpBtm9zYvPT0UiIuNtHmRykfw14wvrhq_XzG_q6jXc056KFg4yzzNmVE74yp2IsA8275E2ZROZPEjC_QFZOPzsusXfOK78WtToZiqbxp7ds1Zb2KelUVjzHS7KOXMemwH1qnBYVqBdtZLygZqxT_t7S7icpR6Hqes87bs7UhZ5hPSFpdoMisnvCXvDu0bj1fKa0HQOIXgIALHcPuaMLwaT_E_m4w';
   @Input() data!: number | undefined;
 
-  constructor(private http: HttpClient) {
+  constructor(private http: HttpClient, private bearer: BearerToken) {
   }
 
   delete() {
     return this.http.delete(`http://localhost:8089/qualifications/${this.data}`, {
       headers: new HttpHeaders()
         .set('Content-Type', 'application/json')
-        .set('Authorization', `Bearer ${this.bearer}`)
+        .set('Authorization', `Bearer ${this.bearer.token}`)
     }).subscribe({
       next: (response) => {
         console.log('Erfolgreich gespeichert:', response);
