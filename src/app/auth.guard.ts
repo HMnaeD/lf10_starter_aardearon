@@ -1,6 +1,6 @@
 import {KeycloakService} from "keycloak-angular";
 import {Injectable} from "@angular/core";
-import {CanActivate} from "@angular/router";
+import {CanActivate, Router} from "@angular/router";
 
 
 @Injectable({
@@ -9,7 +9,8 @@ import {CanActivate} from "@angular/router";
 
 export class AuthGuard implements CanActivate {
   constructor(
-    private keycloakService: KeycloakService
+    private keycloakService: KeycloakService,
+    private router: Router
   ){
 
   }
@@ -18,7 +19,9 @@ export class AuthGuard implements CanActivate {
     const isLoggedIn = await this.keycloakService.isLoggedIn();
 
     if(!isLoggedIn){
-      this.keycloakService.login();
+      this.keycloakService.login({
+          redirectUri: window.location.origin + '/landing-page',
+        });
       return false;
     }
     return true;
