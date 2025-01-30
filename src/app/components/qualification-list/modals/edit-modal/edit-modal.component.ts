@@ -47,6 +47,14 @@ export class EditModalComponent {
       headers: new HttpHeaders()
         .set('Content-Type', 'application/json')
         .set('Authorization', `Bearer ${this.bearer.token}`)
+    }).subscribe({
+      next: (response) => {
+        console.log('Erfolgreich gespeichert:', response);
+        location.reload();
+      },
+      error: (err) => {
+        console.error('Fehler beim Speichern:', err);
+      }
     });
   }
 
@@ -54,6 +62,7 @@ export class EditModalComponent {
     if (this.data) {
       this.data.skill = this.skillName;
       this.skillName = '';
+      this.updateData(this.data);
     }
   }
 }
