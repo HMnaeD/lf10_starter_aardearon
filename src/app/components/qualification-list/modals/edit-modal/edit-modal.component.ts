@@ -60,7 +60,7 @@ export class EditModalComponent {
 
   setName() {
     if (this.data) {
-      this.data.skill = this.skillName;
+      this.data.skill = this.skillName || this.data.skill;
       this.skillName = '';
       this.updateData(this.data);
     }
