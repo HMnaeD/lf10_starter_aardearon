@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import {RouterOutlet} from '@angular/router';
+import {NavigationEnd, Router, RouterOutlet} from '@angular/router';
 import {EmployeeListComponent} from "./employee-list/employee-list.component";
 import {HeaderComponent} from "./header/header.component";
 import {LandingPageComponent} from "./landing-page/landing-page.component";
@@ -17,6 +17,5 @@ import {HttpClient} from "@angular/common/http";
 })
 export class AppComponent {
   title = 'aardearon';
-
 }
 
