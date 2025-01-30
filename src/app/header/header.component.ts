@@ -1,25 +1,31 @@
 import { Component } from '@angular/core';
-import {NgOptimizedImage} from "@angular/common";
+import {NgClass, NgOptimizedImage} from "@angular/common";
 import {KeycloakService} from "keycloak-angular";
-import {RouterLink} from "@angular/router";
+import {NavigationEnd, Router, RouterLink} from "@angular/router";
 
 @Component({
     selector: 'app-header',
   imports: [
     NgOptimizedImage,
-    RouterLink
+    RouterLink,
+    NgClass
   ],
     templateUrl: './header.component.html',
     styleUrl: './header.component.css'
 })
 export class HeaderComponent {
 
+  currentRoute: string = '';
   keycloakService: KeycloakService;
 
-  constructor(private keycloak: KeycloakService) {
+  constructor(private keycloak: KeycloakService, private router: Router) {
     this.keycloakService = keycloak;
+    this.router.events.subscribe(event => {
+      if (event instanceof NavigationEnd) {
+        this.currentRoute = event.urlAfterRedirects;
+      }
+    })
   }
-
 
   public logout() {
     this.keycloakService.logout('http://localhost:4200');
