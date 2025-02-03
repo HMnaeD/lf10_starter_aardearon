@@ -18,8 +18,8 @@ import {BearerToken} from "../../../../services/bearer.service";
             <p class="text-break">Sie sind dabei Qualifikation X zu löschen. Sind Sie sicher, das Sie das möchten?</p>
           </div>
           <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" (click)="delete()">Löschen</button>
-            <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Abbrechen</button>
+            <button type="button" class="btn btn-primary" data-bs-dismiss="modal" (click)="delete()">Löschen</button>
+            <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Abbrechen</button>
           </div>
         </div>
       </div>
