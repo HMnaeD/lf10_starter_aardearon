@@ -26,8 +26,8 @@ import {BearerToken} from "../../../../services/bearer.service";
             </div>
           </div>
           <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" (click)="setQualification()">Erstellen</button>
-            <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Abbrechen</button>
+            <button type="button" class="btn btn-primary" data-bs-dismiss="modal" (click)="setQualification()">Erstellen</button>
+            <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Abbrechen</button>
           </div>
         </div>
       </div>
