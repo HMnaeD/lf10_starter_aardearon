@@ -1,8 +1,7 @@
-import {Component, EventEmitter, Input, Output} from '@angular/core';
+import {Component, Input} from '@angular/core';
 import {Employee} from "../../../Employee";
 import {FormsModule} from "@angular/forms";
 import {CommonModule} from '@angular/common';
-import {Subscription} from "rxjs";
 import {HttpClient, HttpHeaders} from "@angular/common/http";
 import {BearerToken} from "../../../services/bearer.service";
 import {Qualification} from "../../../model/qualification";
@@ -84,8 +83,6 @@ export class SkillsComponent {
         console.log('Neue Qualifikation erstellt:', response);
         this.availableSkills.push(newSkill);
         this.newSkillName = '';
-
-        this.availableSkills.push(newSkill);
 
         if (this.employee) {
           if (!this.employee.skillSet) {

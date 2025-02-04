@@ -34,7 +34,7 @@
           <td class="text-center">{{ e.phone }}</td>
           <td class="text-center">
                 @if(e.skillSet && e.skillSet.length === 0) {
-                    <button class="btn btn-secondary text-decoration-none" data-bs-toggle="modal" data-bs-target="#addModal" (click)="setSelectedEmployee(e)">
+                    <button class="btn btn-secondary text-decoration-none" data-bs-toggle="modal" data-bs-target="#skillsModal" (click)="setSelectedEmployee(e)">
                       Qualifikationen hinzufügen
                     </button>
                 } @else if (e.skillSet && e.skillSet.length>0) {
@@ -62,4 +62,4 @@
 <app-delete [employee]="selectedEmployee"></app-delete>
 <app-edit [employee]="selectedEmployee"></app-edit>
 <app-skills [employee]="selectedEmployee"></app-skills>
-<app-add [employee]="selectedEmployee"></app-add>
+
