@@ -1,5 +1,5 @@
 import {Component, Input, OnChanges, SimpleChanges} from '@angular/core';
-import { Employee } from "../../../Employee";
+import {Employee, Skill} from "../../../Employee";
 import {FormsModule} from "@angular/forms";
 import {HttpClient, HttpHeaders} from "@angular/common/http";
 import {BearerToken} from "../../../services/bearer.service";
@@ -21,6 +21,7 @@ export class EditComponent{
   postcode: string = '';
   city: string = '';
   phone: string = '';
+  skillSet: Skill[] = [];
 
   constructor(private http: HttpClient, private bearer: BearerToken) {}
 
@@ -59,6 +60,7 @@ export class EditComponent{
       this.employee.postcode = this.postcode || this.employee.postcode;
       this.employee.city = this.city || this.employee.city;
       this.employee.phone = this.phone || this.employee.phone;
+      this.employee.skillSet = this.skillSet || this.employee.skillSet;
       this.updateEmployee(this.employee);
     }
   }
