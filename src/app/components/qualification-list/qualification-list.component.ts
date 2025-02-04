@@ -21,14 +21,19 @@ import {BearerToken} from "../../services/bearer.service";
   ],
   template: `
     <app-header></app-header>
-    <div id="qualification-table" class="container mt-5">
+    <div class="container justify-content-between d-flex flex-row-reverse mt-5">
+      <div>
+        <button type="button" class="btn bg-transparent" data-bs-toggle="modal" data-bs-target="#createModal"><i class="bi bi-plus-circle text-black h3"></i></button>
+      </div>
+    </div>
+    <div id="qualification-table" class="container">
       <table class="table table-striped table-hover">
         <thead>
         <tr>
           <th>Id</th>
           <th>Bezeichnung</th>
           <th>&nbsp;</th>
-          <th><button type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#createModal"><i class="bi bi-plus-circle"></i></button></th>
+          <th>&nbsp;</th>
         </tr>
         </thead>
         <tbody>
@@ -36,8 +41,8 @@ import {BearerToken} from "../../services/bearer.service";
             <tr>
               <td>{{qualification.id}}</td>
               <td>{{qualification.skill}}</td>
-              <td><button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#editModal" (click)="setCurrentQualification(qualification)"><i class="bi bi-pencil-square"></i></button></td>
-              <td><button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#deleteModal" (click)="setCurrentId(qualification.id)"><i class="bi bi-trash3"></i></button></td>
+              <td><button type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#editModal" (click)="setCurrentQualification(qualification)"><i class="bi bi-pencil-square"></i></button></td>
+              <td><button type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#deleteModal" (click)="setCurrentId(qualification.id)"><i class="bi bi-trash3"></i></button></td>
             </tr>
           }
         </tbody>
