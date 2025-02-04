@@ -1,0 +1,41 @@
+<div class="modal fade" id="createModal" tabindex="-1" aria-labelledby="createModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="createModalLabel">Mitarbeiter anlegen</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div class="mb-3">
+          <label for="employee-firstname" class="col-form-label">Vorname</label>
+          <input type="text" class="form-control" id="employee-firstname" [(ngModel)]="firstName" name="skill-name">
+        </div>
+        <div>
+          <label for="employee-lastname" class="col-form-label">Nachname</label>
+          <input type="text" class="form-control" id="employee-lastname" [(ngModel)]="lastName" name="skill-name">
+        </div>
+        <div>
+          <label for="employee-street" class="col-form-label">Straße und Hausnummer</label>
+          <input type="text" class="form-control" id="employee-street" [(ngModel)]="street" name="skill-name">
+        </div>
+        <div>
+          <label for="employee-city" class="col-form-label">Stadt</label>
+          <input type="text" class="form-control" id="employee-city" [(ngModel)]="city" name="skill-name">
+        </div>
+        <div>
+          <label for="employee-zip" class="col-form-label">Postleitzahl</label>
+          <input type="text" class="form-control" id="employee-zip" [(ngModel)]="postcode" name="skill-name">
+        </div>
+        <div>
+          <label for="employee-phone" class="col-form-label">Telefonnummer</label>
+          <input type="text" class="form-control" id="employee-phone" [(ngModel)]="phone" name="skill-name">
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" (click)="setEmployee()">Erstellen</button>
+        <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Abbrechen</button>
+      </div>
+    </div>
+  </div>
+</div>
+

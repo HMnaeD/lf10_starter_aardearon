@@ -1,0 +1,41 @@
+<div class="modal fade" id="editModal" tabindex="-1" aria-labelledby="editModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="editModalLabel">Mitarbeiter bearbeiten</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div>
+          <label for="employee-firstname" class="col-form-label">Vorname</label>
+          <input type="text" class="form-control" id="employee-firstname" [(ngModel)]="firstName" [value]="employee?.firstName">
+        </div>
+        <div>
+          <label for="employee-lastname" class="col-form-label">Nachname</label>
+          <input type="text" class="form-control" id="employee-lastname" [(ngModel)]="lastName" [value]="employee?.lastName">
+        </div>
+        <div>
+          <label for="employee-street" class="col-form-label">Straße und Hausnummer</label>
+          <input type="text" class="form-control" id="employee-street" [(ngModel)]="street" [value]="employee?.street">
+        </div>
+        <div>
+          <label for="employee-city" class="col-form-label">Stadt</label>
+          <input type="text" class="form-control" id="employee-city" [(ngModel)]="city" [value]="employee?.city">
+        </div>
+        <div>
+          <label for="employee-zip" class="col-form-label">Postleitzahl</label>
+          <input type="text" class="form-control" id="employee-zip" [(ngModel)]="postcode" [value]="employee?.postcode">
+        </div>
+        <div>
+          <label for="employee-phone" class="col-form-label">Telefonnummer</label>
+          <input type="text" class="form-control" id="employee-phone" [(ngModel)]="phone" [value]="employee?.phone">
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" (click)="setEmployeeData()">Bearbeiten</button>
+        <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Abbrechen</button>
+      </div>
+    </div>
+  </div>
+</div>
+

@@ -1,9 +1,65 @@
-<h1>LF10-Starter</h1>
-Wenn Sie in der EmployeeListComponent.ts ein gültiges Bearer-Token eintragen, sollten hier die Namen der in der Datenbank gespeicherten Mitarbeiter angezeigt werden!
-<ul>
-  @for(e of employees$ | async; track e.id) {
-    <li>
-      {{e.lastName }}, {{e.firstName}}
-    </li>
-  }
-</ul>
+<app-header></app-header>
+<div class="container justify-content-between d-flex mt-4">
+  <div class="m-2">
+    <button type="button" class="btn bg-transparent" data-bs-toggle="modal" data-bs-target="#filterModal">
+      <i class="bi bi-funnel text-black h3"></i>
+    </button>
+  </div>
+  <div class="m-2">
+    <button type="button" class="btn bg-transparent" data-bs-toggle="modal" data-bs-target="#createModal">
+      <i class="bi bi-plus-circle text-black h3"></i>
+    </button>
+  </div>
+</div>
+<app-filter (filterApplied)="applyFilter($event)"></app-filter>
+<div class="container mt-3">
+  <table id="test" class="table table-striped table-hover table-responsive">
+    <thead>
+    <tr>
+      <td class="text-center">ID</td>
+      <td class="text-center">NAME</td>
+      <td class="text-center">ADRESSE</td>
+      <td class="text-center">TELEFON</td>
+      <td class="text-center">QUALIFIKATIONEN</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+    </tr>
+    </thead>
+    <tbody>
+      @for(e of filteredEmployees$ | async; track e.id) {
+        <tr>
+          <td class="text-center">{{ e.id }}</td>
+          <td class="text-center">{{ e.firstName + ' ' + e.lastName }}</td>
+          <td class="text-center">{{ e.street + ' ' + e.postcode + ' ' + e.city }}</td>
+          <td class="text-center">{{ e.phone }}</td>
+          <td class="text-center">
+                @if(e.skillSet && e.skillSet.length === 0) {
+                    <button class="btn btn-secondary text-decoration-none" data-bs-toggle="modal" data-bs-target="#skillsModal" (click)="setSelectedEmployee(e)">
+                      Qualifikationen hinzufügen
+                    </button>
+                } @else if (e.skillSet && e.skillSet.length>0) {
+                    <button class="btn btn-secondary text-decoration-none" data-bs-toggle="modal" data-bs-target="#skillsModal" (click)="setSelectedEmployee(e)">
+                      Alle Anzeigen
+                    </button>
+                }
+          </td>
+          <td class="text-center">
+            <button type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#editModal" (click)="setSelectedEmployee(e)">
+              <i class="bi bi-pencil-square"></i>
+            </button>
+          </td>
+          <td class="text-center">
+            <button type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#deleteModal" (click)="setSelectedEmployee(e)">
+              <i class="bi bi-trash3"></i>
+            </button>
+          </td>
+        </tr>
+      }
+    </tbody>
+  </table>
+</div>
+<app-create></app-create>
+<app-delete [employee]="selectedEmployee"></app-delete>
+<app-edit [employee]="selectedEmployee"></app-edit>
+<app-skills [employee]="selectedEmployee"></app-skills>
+

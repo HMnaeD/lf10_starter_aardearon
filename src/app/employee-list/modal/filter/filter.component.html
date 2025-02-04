@@ -1,0 +1,25 @@
+<div class="modal fade" id="filterModal" tabindex="-1" aria-labelledby="filterModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="filterModalLabel">Mitarbeiter filtern</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div class="mb-3">
+          <label for="filter-name" class="col-form-label">Name</label>
+          <input type="text" class="form-control" id="filter-name" [(ngModel)]="name">
+        </div>
+        <div>
+          <label for="filter-qualification" class="col-form-label">Qualifikation</label>
+          <input type="text" class="form-control" id="filter-qualification" [(ngModel)]="qualification">
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" (click)="applyFilter()">Anwenden</button>
+        <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Abbrechen</button>
+      </div>
+    </div>
+  </div>
+</div>
+
