@@ -108,7 +108,7 @@ export class SkillsComponent {
         .set('Content-Type', 'application/json')
         .set('Authorization', `Bearer ${this.bearer.token}`)
     }).subscribe({
-      next: (response: Object) => {
+      next: () => {
         console.log(`Qualifikation ${skillId} erfolgreich gelöscht`);
         this.employee!.skillSet = this.employee?.skillSet?.filter((s: any) => s.id !== skillId) || [];
       },

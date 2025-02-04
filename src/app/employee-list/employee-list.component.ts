@@ -39,7 +39,7 @@ export class EmployeeListComponent implements OnInit {
         .set('Content-Type', 'application/json')
         .set('Authorization', `Bearer ${this.bearer.token}`)
     }).subscribe(data => {
-      this.allEmployees$.next(data);
+      this.allEmployees$.next();
     })
   }
 
