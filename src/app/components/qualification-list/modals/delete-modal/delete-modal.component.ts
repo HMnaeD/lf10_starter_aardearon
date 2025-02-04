@@ -15,7 +15,7 @@ import {BearerToken} from "../../../../services/bearer.service";
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
           <div class="modal-body">
-            <p class="text-break">Sie sind dabei Qualifikation X zu löschen. Sind Sie sicher, das Sie das möchten?</p>
+            <p class="text-break">Sie sind dabei die Qualifikation zu löschen. Sind Sie sicher, dass Sie das möchten?</p>
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-primary" data-bs-dismiss="modal" (click)="delete()">Löschen</button>
