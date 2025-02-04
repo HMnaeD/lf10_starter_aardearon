@@ -36,7 +36,7 @@ export class EditComponent{
   // }
 
   updateEmployee(employee: Employee) {
-   this.http.put<Employee>(`http://localhost:8089/employees/${employee.id}`, employee, {
+   this.http.patch<Employee>(`http://localhost:8089/employees/${employee.id}`, employee, {
       headers: new HttpHeaders()
         .set('Content-Type', 'application/json')
         .set('Authorization', `Bearer ${this.bearer.token}`)

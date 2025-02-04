@@ -1,6 +1,6 @@
 import {Component, OnInit, ViewEncapsulation, ViewChild} from '@angular/core';
 import {CommonModule} from '@angular/common';
-import {Observable, BehaviorSubject, of} from "rxjs";
+import {Observable, BehaviorSubject} from "rxjs";
 import {map} from 'rxjs/operators';
 import {HttpClient, HttpHeaders} from "@angular/common/http";
 import {Employee} from "../Employee";
@@ -12,11 +12,10 @@ import {EditComponent} from "./modal/edit/edit.component";
 import {FilterComponent} from "./modal/filter/filter.component";
 import {HeaderComponent} from "../header/header.component";
 import {SkillsComponent} from "./modal/skills/skills.component";
-import {AddComponent} from "./modal/add/add.component";
 
 @Component({
   selector: 'app-employee-list',
-  imports: [CommonModule, RouterLink, RouterOutlet, CreateComponent, DeleteComponent, EditComponent, FilterComponent, SkillsComponent, AddComponent, HeaderComponent],
+  imports: [CommonModule, RouterLink, RouterOutlet, CreateComponent, DeleteComponent, EditComponent, FilterComponent, SkillsComponent, HeaderComponent],
   templateUrl: './employee-list.component.html',
   styleUrl: './employee-list.component.css',
   encapsulation: ViewEncapsulation.None,
@@ -39,7 +38,7 @@ export class EmployeeListComponent implements OnInit {
         .set('Content-Type', 'application/json')
         .set('Authorization', `Bearer ${this.bearer.token}`)
     }).subscribe(data => {
-      this.allEmployees$.next();
+      this.allEmployees$.next(data);
     })
   }
 
