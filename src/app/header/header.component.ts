@@ -4,14 +4,15 @@ import {KeycloakService} from "keycloak-angular";
 import {NavigationEnd, Router, RouterLink} from "@angular/router";
 
 @Component({
-    selector: 'app-header',
+  selector: 'app-header',
   imports: [
     NgOptimizedImage,
     RouterLink,
     NgClass
   ],
-    templateUrl: './header.component.html',
-    styleUrl: './header.component.css'
+  templateUrl: './header.component.html',
+  standalone: true,
+  styleUrl: './header.component.css'
 })
 export class HeaderComponent {
 
